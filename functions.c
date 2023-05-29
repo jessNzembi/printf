@@ -1,33 +1,5 @@
 #include "main.h"
 
-struct global
-{
-	char *format;
-	int i;
-	int j;
-	int count;
-	va_list args;
-	char *str;
-} id2;
-
-/**
- * numlen - returns the length of a number
- * @num: number to be checked
- * Return: length of number
- */
-
-int _numlen(unsigned long int num)
-{
-	int len = 0;
-
-	while (num > 0)
-	{
-		num /= 10;
-		len++;
-	}
-	return (len);
-}
-
 /**
  * print_char - Prints a char
  * @types: List a of arguments
