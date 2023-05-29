@@ -1,4 +1,5 @@
-printf project
+ALX printf project with the following tasks:
+
 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 mandatory
 Write a function that produces output according to a format.
@@ -18,7 +19,6 @@ b: the unsigned int argument is converted to binary
 3. What one has not experienced, one will never understand in print
 #advanced
 Handle the following conversion specifiers:
-
 u
 o
 x
@@ -31,7 +31,6 @@ Use a local buffer of 1024 chars in order to call write as little as possible.
 5. My weakness is wearing too much leopard print
 #advanced
 Handle the following custom conversion specifier:
-
 S : prints the string.
 Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
 
@@ -42,15 +41,12 @@ Handle the following conversion specifier: p.
 7. The big print gives and the small print takes away
 #advanced
 Handle the following flag characters for non-custom conversion specifiers:
-
 +
 space
-#
 
 8. Sarcasm is lost in print
 #advanced
 Handle the following length modifiers for non-custom conversion specifiers:
-
 l
 h
 
@@ -73,13 +69,11 @@ Handle the - flag character for non-custom conversion specifiers.
 13. Print is the sharpest and the strongest weapon of our party
 #advanced
 Handle the following custom conversion specifier:
-
 r : prints the reversed string
 
 14. The flood of print has turned reading into a process of gulping rather than savoring
 #advanced
 Handle the following custom conversion specifier:
-
 R: prints the rot13'ed string
 
 15. *
