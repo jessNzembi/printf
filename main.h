@@ -19,28 +19,28 @@
 #define S_SHORT 1
 
 /**
- * struct fmt - Struct op
+ * struct frmt - Structure
  *
- * @fmt: The format.
+ * @frmt: The format.
  * @fn: The function associated.
  */
-struct fmt
+struct frmt
 {
-	char fmt;
+	char frmt;
 	int (*fn)(va_list, char[], int, int, int, int);
 };
 
 
 /**
- * typedef struct fmt fmt_t - Struct op
+ * typedef struct frmt frmt_t - Structure
  *
- * @fmt: The format.
- * @fm_t: The function associated.
+ * @frmt: The format.
+ * @frm_t: The function associated.
  */
-typedef struct fmt fmt_t;
+typedef struct frmt frmt_t;
 
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
+int handle_print(const char *frmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /* Funtions to print chars and strings */
@@ -60,13 +60,14 @@ int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_hexadecimal(va_list types, char buffer[],
+int print_hex(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_hexa_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 int print_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
+int _putchar(char c);
 
 /* Function to print non printable characters */
 int print_non_printable(va_list types, char buffer[],
@@ -77,10 +78,10 @@ int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Funciotns to handle other specifiers */
-int get_flags(const char *format, int *i);
-int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
-int get_size(const char *format, int *i);
+int flags(const char *format, int *i);
+int width(const char *format, int *i, va_list list);
+int precision(const char *format, int *i, va_list list);
+int size(const char *format, int *i);
 
 /*Function to print string in reverse*/
 int print_reverse(va_list types, char buffer[],
