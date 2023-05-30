@@ -41,7 +41,7 @@ int flags(const char *format, int *i)
  */
 int precision(const char *format, int *i, va_list list)
 {
-	int curr_i = *i + 1;
+	/*int curr_i = *i + 1;
 	int prec = -1;
 
 	if (format[curr_i] != '.')
@@ -68,6 +68,28 @@ int precision(const char *format, int *i, va_list list)
 
 	*i = curr_i - 1;
 
+	return (prec);*/
+	int prec = -1;
+	
+	if (format[*i] == '.')
+	{
+		++(*i);
+		if (format[*i] == '*')
+		{
+			++(*i);
+			prec = va_arg(list, int);
+		}
+		else
+		{
+			prec = 0;
+			while (format[*i] >= '0' && format[*i] <= '9')
+			{
+				prec = prec * 10 + format[*i] - '0';
+				++(*i);
+			}
+			--(*i);
+		}
+	}
 	return (prec);
 }
 
